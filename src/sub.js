@@ -3,7 +3,25 @@ import './App.css';
 // 사용자의 사용 환경(디바이스)에 따른 화면 구분
 import { BrowserView, MobileView } from 'react-device-detect';
 import { Route, Routes, Link, Switch } from 'react-router-dom';
-import Header from './App';
+
+const Header = ( props ) => {
+  return (
+    <header className="App-header">
+      <img src={logo} className="App-logo" alt="logo" />
+      <p>
+        {props.device}
+      </p>
+      <a
+        className="App-link"
+        href="https://reactjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn React
+      </a>
+    </header>
+  );
+}
 
 const Sub = () => {
   return (
